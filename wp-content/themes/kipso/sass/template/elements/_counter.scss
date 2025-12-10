@@ -1,0 +1,27 @@
+.milestone-block {
+  &.style-1{
+    .box-content{
+      .milestone-icon{
+        display: block;
+        text-align: left;
+        .icon-image{
+          display: block;
+          line-height: 1;
+          margin-bottom: 30px;
+        }
+      }
+      .milestone-content{
+        .milestone-number-inner{
+          font-size: 50px;
+          line-height: 1;
+          color: $black;
+          font-family: $font-family-second;
+
+        }
+        .milestone-text{
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,141 @@
+.gsc-icon-box-styles{
+  .title{
+    margin-top: 0;
+  }
+  &.style-1{
+    position: relative;
+    @include clearfix();
+    background: $white;
+    text-align: left;
+    display: table;
+    width: 100%;
+    .icon-inner{
+      display: table-cell;
+      position: relative;
+      .icon{
+        position: relative;
+        z-index: 9;
+        display: inline-block;
+        line-height: 1;
+      }
+      .icon-font{
+        font-size: 34px;
+      }
+    }
+    .content-inner{
+      padding-left: 15px;
+      display: table-cell;
+      vertical-align: top;
+      .title{
+        color: $black;
+        font-size: 20px;
+        letter-spacing: 0;
+        font-weight: 500;
+      }
+    }
+  }
+  &.style-2{
+    position: relative;
+    @include clearfix();
+    text-align: center;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 50px 50px;
+    transition: all 0.35s;
+    .block-content{
+      .icon-inner{
+        @include size(110px, 110px);
+        border-radius: 50%;
+        margin: 0 auto;
+        background: $theme-color;
+        color: $white;
+        line-height: 110px;
+        position: relative;
+        &:after{
+          content: '';
+          @include size(100%, 100%);
+          border: 2px solid $theme-color;
+          position: absolute;
+          top: 0;
+          left: -10px;
+          z-index: 1;
+          border-radius: 50%;
+          transition: all 0.35s;
+        }
+        .icon-image{
+          display: inline-block;
+          img{
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+    .content-inner{
+      position: relative;
+      z-index: 9;
+      .title{
+        margin: 0 0 18px;
+        color: $headings-color;
+        font-size: 22px;
+        font-weight: 600;
+      }
+    }
+    &:hover{
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      .block-content{
+        .icon-inner{
+          &:after{
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+  &.style-3{
+    position: relative;
+    @include clearfix();
+    text-align: left;
+    .block-content{
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      padding: 40px 45px 50px 60px;
+      &:before{
+        content: "";
+        position: absolute;
+        display: block;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 30px;
+        z-index: 1;
+        background: $theme-color;  
+      }
+      &:after{
+        content: "";
+        position: absolute;
+        display: block;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 30px;
+        z-index: 1;
+        background: $theme-color;
+        transform-origin: bottom left;
+        -ms-transform: skew(-8deg, 0deg);
+        -webkit-transform: skew(-8deg, 0deg);
+        transform: skew(-8deg, 0deg);
+        @include transition(all 0.35s);
+      }
+    }
+    .content-inner{
+      position: relative;
+      z-index: 9;
+      .title{
+        margin: 18px 0;
+        color: $headings-color;
+        font-size: 26px;
+        font-weight: 700;
+      }
+    }
+  }
+}

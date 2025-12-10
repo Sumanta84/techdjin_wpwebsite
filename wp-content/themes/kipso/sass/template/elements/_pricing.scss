@@ -1,0 +1,101 @@
+.gsc-pricing{
+  padding-left: 20px;
+  transition: all 0.35s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  @include media-breakpoint-down(lg){
+    padding-left: 10px;
+  }
+  &:after{
+    content: '';
+    width: 22px;
+    height: 100%;
+    border: 2px solid $theme-color;
+    border-right: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: all 0.35s;
+  }
+  .element-content{
+    background: $white;
+    padding: 60px 30px 55px;
+    position: relative;
+    z-index: 11;
+    @include media-breakpoint-down(lg){
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  .content-inner{
+    max-width: 250px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 11;
+    .plan-price{
+      padding-bottom: 30px;
+      .price-value{
+        font-size: 60px;
+        color: $theme-color;
+        line-height: 1;
+        margin-bottom: 2px;
+        font-family: $font-family-second;
+        @include media-breakpoint-down(lg){
+          font-size: 38px;
+        }
+      }
+      .title{ 
+        font-size: 14px;
+        text-transform: uppercase;
+        color: $black;
+        font-weight: 600;
+        letter-spacing: 3px;  
+      }
+    }
+    .plan-list{
+      padding: 0;
+      list-style-type: none;
+      border-top: 1px solid $border-color;
+      padding: 25px 0 0;
+      li{
+        padding: 5px 0;
+        @include media-breakpoint-down(lg){
+          font-size: 14px;
+        }
+      }
+    }
+    .pricing-action{
+      margin-top: 30px;
+      @include media-breakpoint-down(lg){
+        .btn-theme{
+          padding: 0 20px;
+          font-size: 14px;
+        }
+      }
+    }
+    .bottom-text{
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: $theme-color;
+      margin-top: 35px;
+     @include media-breakpoint-down(lg){
+        font-size: 11px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+  &.pricing-featured{
+    padding-left: 0;
+    &:after{
+      display: none;
+    }
+  }
+  &:hover{
+    padding-left: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    &:after{
+      left: 20px;
+    }
+  }
+}

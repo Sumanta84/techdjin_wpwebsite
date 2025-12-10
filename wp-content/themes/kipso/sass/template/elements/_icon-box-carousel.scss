@@ -1,0 +1,155 @@
+.gsc-icon-box-carousel{
+   &.style-1{
+      .owl-carousel{
+         margin: 0 -5px!important;
+         .owl-item{
+            padding: 0 5px!important;
+         }
+      }
+      .icon-box-item{
+         padding: 40px 20px;
+         text-align: center;
+         background: $white;
+         transition: all 0.35s;
+         margin-bottom: 20px;
+         position: relative;
+         .link-overlay{
+            position: absolute;
+            @include size(100%, 100%);
+            top: 0;
+            left: 0;
+            z-index: 11;            
+         }
+         .icon-box-item-content{
+            width: 100%;
+            .box-icon{
+               @include size(115px, 115px);
+               position: relative;
+               margin: 0 auto;
+               &:after{
+                  content: '';
+                  @include size(115px, 115px);
+                  border: 2px solid $theme-color;
+                  position: absolute;
+                  top: 0;
+                  left: -10px;
+                  z-index: 1;
+                  border-radius: 50%;
+                  transition: all 0.35s;
+               }
+               .icon-inner{
+                  width: 100%;
+                  height: 100%;
+                  margin: 0 auto;
+                  position: relative;
+                  z-index: 9;
+                  border-radius: 50%;
+                  padding: 10px;
+                  line-height: 95px;
+                  position: relative;
+                  z-index: 9;
+               }
+               img{
+                  vertical-align: middle;
+               }
+            }
+            .title{
+               font-size: 16px;
+               font-weight: 600;
+               margin-top: 20px;
+               color: $black;
+            }
+         }
+         &:hover{
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            .icon-box-item-content{
+               .box-icon{
+                  &:after{
+                     left: -1px;
+                  }
+               }
+               .title{
+                  color: $theme-color;
+                  a{
+                     color: $theme-color;
+                  }
+               }
+            }
+         }
+      }
+   }
+   &.style-2{
+      .owl-carousel{
+         margin: 0 12px!important;
+         .owl-item{
+            padding: 0 12px!important;
+         }
+      }
+      .icon-box-item{
+         text-align: center;
+         background: $white;
+         transition: all 0.35s;
+         margin-bottom: 20px;
+         position: relative;
+         .link-overlay{
+            position: absolute;
+            @include size(100%, 100%);
+            top: 0;
+            left: 0;
+            z-index: 11;            
+         }
+         .icon-box-item-content{
+            width: 100%;
+            padding: 30px 20px;
+            &:after{
+               content: '';
+               @include size(100%, 100%);
+               border: 2px solid $theme-color;
+               position: absolute;
+               top: 0;
+               left: -10px;
+               z-index: 1;
+               transition: all 0.35s;
+            }
+            .box-icon{
+               @include size(110px, 110px);
+               position: relative;
+               margin: 0 auto;
+               background: rgba(255, 255, 255, 0.1);
+               border-radius: 50%;
+               .icon-inner{
+                  width: 100%;
+                  height: 100%;
+                  margin: 0 auto;
+                  position: relative;
+                  z-index: 9;
+                  border-radius: 50%;
+                  padding: 10px;
+                  line-height: 95px;
+                  position: relative;
+                  z-index: 9;
+               }
+               img{
+                  vertical-align: middle;
+               }
+            }
+            .title{
+               font-size: 16px;
+               font-weight: 600;
+               margin-top: 20px;
+               color: $white;
+            }
+         }
+         &:hover{
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            .icon-box-item-content{
+               &:after{
+                  left: -1px;
+               }
+            }
+         }
+      }
+   }
+}

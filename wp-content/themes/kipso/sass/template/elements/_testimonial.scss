@@ -1,0 +1,124 @@
+.gva-testimonial-carousel{
+  &.style-1{
+    .testimonial-item{
+      text-align: center;
+      padding: 60px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      @include box-shadow(0 10px 14px rgba(0, 0, 0, 0.05));
+      margin-bottom: 30px;
+      position: relative;
+      background: $white;
+      @include media-breakpoint-down(lg){
+        padding: 45px 30px;
+      }
+      .icon-quote{
+        font-size: 40px;
+        line-height: 68px;
+        position: relative;
+        @include size(40px, 40px);
+        background: $theme-color;
+        text-align: center;
+        @include border-radius(50%);
+        display: inline-block;
+        margin-bottom: 30px;
+        color: $white;
+        &:after{
+          content: '';
+          @include size(100%, 100%);
+          border: 1px solid $theme-color;
+          position: absolute;
+          top: 0;
+          left: -5px;
+          z-index: 1;
+          border-radius: 50%;
+          @include transition(all 0.35s);
+        }
+      }
+      .testimonial-content{
+        font-size: 16px;
+        line-height: 32px;
+        font-weight: 400;
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+        border-bottom: 2px solid $border-color;
+      }
+      .testimonial-image{
+        @include size(58px, 58px);
+        border-radius: 50%;
+        overflow: hidden;
+        text-align: center;
+        display: inline-block;
+      }
+      .testimonial-information{
+        margin-top: 5px;
+        span{
+          display: block;
+          &.testimonial-name{
+            font-size: 18px;
+            font-weight: 600;
+            color: $black;
+          }
+          &.testimonial-job{
+            font-size: 12px;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          }
+        }
+      }
+      &:hover{
+        .icon-quote{
+          &:after{
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+  &.style-2{
+    .testimonial-item{
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+      max-width: 780px;
+      margin: 0 auto;
+      .testimonial-image{
+        @include size(80px, 80px);
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 35px;
+      }
+      .testimonial-content{
+        font-size: 30px;
+        line-height: 50px;
+        font-weight: 400;
+        color: $black;
+      }
+      .testimonial-information{
+        margin-top: 45px;
+        span{
+          &.testimonial-name{
+            font-size: 20px;
+            font-weight: 500;
+            color: $theme-color;
+            letter-spacing: 0;
+          }
+          &.testimonial-job{
+            font-size: 16px;
+          }
+          &.dot{
+            padding: 0 10px;
+            color: $theme-color;
+          }
+        }
+      }
+      &:hover{
+        .icon-quote{
+          background: $theme-color;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+

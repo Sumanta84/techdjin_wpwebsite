@@ -1,0 +1,113 @@
+.gsc-heading{
+  padding: 0 0 10px;
+  display: block;
+  width: 100%;
+  @include clearfix();
+  .heading-icon{
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .heading-video{
+    margin-bottom: 50px;
+    .video-link{
+      display: inline-block;
+      border-radius: 50%;
+      font-size: 24px;
+      color: $white;
+      background: $theme-color;
+      text-align: center;
+      position: relative;
+      @include transition(all 0.35s);
+      &:after{
+        content: '';
+        top: -20px;
+        left: -20px;
+        right: -20px;
+        bottom: -20px;
+        position: absolute;
+        z-index: 1;
+        border: 20px solid rgba(24, 33, 46, 0.4);
+        @include border-radius(50%);
+      }
+      &:hover{
+        @include scale(0.9);
+      }
+    }
+  }
+  .title{
+    font-size: 50px;
+    position: relative;
+    margin: 0;
+    @include media-breakpoint-down(lg){
+      font-size: 42px;
+    }
+    @include media-breakpoint-down(sm){
+      font-size: 32px;
+    }
+    a{
+      text-decoration: underline;
+      color: $black;
+      &:hover{
+        color: $theme-color;
+      }
+    }
+  }
+  .sub-title{
+    color: $theme-color-2;
+    font-size: 30px;
+    font-family: $font-family-second;
+    line-height: 1.6;
+  }
+  .title-desc{
+    max-width: 700px;
+    margin: 0 auto;
+    p{
+      margin-bottom: 0;
+    }
+  }
+
+  &.align-center{
+    text-align: center;
+    .content-inner{
+      margin: 0 auto;
+    }
+  }
+  &.align-left{
+    text-align: left;
+    .title-desc{
+      float: left;
+    }
+    .title-icon{
+      padding-left: 50px;
+    }
+  }
+  &.align-right{
+    text-align: right;
+    .title-desc{
+      float: right;
+    }
+    .title-icon{
+      padding-right: 50px;
+    }
+  }
+  &.style-2{
+    .title{
+      font-size: 24px;
+      writing-mode: tb-rl;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-left: 0;
+      margin-right: 0;
+      font-family: $font-family-second;
+      letter-spacing: 0;
+      font-weight: 400;
+      white-space: nowrap;
+      @include media-breakpoint-down(sm){
+        writing-mode: inherit;
+        text-align: center;
+        transform: translateX(0);
+        left: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+<?php
+/**
+ * $Desc
+ *
+ * @package    basetheme
+ * @author     Gaviasthemes Team     
+ * @copyright  Copyright (C) 2016 Gaviasthemess. All Rights Reserved.
+ * @license    GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
+ * 
+ */
+global $post;
+?>
+<ul class="social-networks">
+	<?php if((bool)kipso_get_option('product_sharing_facebook',true)): ?>
+	<li class="facebook">
+		<a data-toggle="tooltip" data-placement="left" data-animation="true"  data-original-title="Facebook" href="<?php echo kipso_protocol_html() ?>://www.facebook.com/sharer.php?s=100&p&#91;url&#93;=<?php the_permalink(); ?>&p&#91;title&#93;=<?php the_title(); ?>" target="_blank">
+			<i class="fa fa-facebook"></i>
+		</a>
+	</li>
+	<?php endif; ?>
+
+	<?php if((bool)kipso_get_option('product_sharing_twitter',true)): ?>
+	<li class="twitter">
+		<a data-toggle="tooltip" data-placement="left" data-animation="true"  data-original-title="Twitter" href="<?php echo kipso_protocol_html() ?>://twitter.com/home?status=<?php the_title(); ?> <?php the_permalink(); ?>" target="_blank">
+			<i class="fa fa-twitter"></i>
+		</a>
+	</li>
+	<?php endif; ?>
+
+	<?php if((bool)kipso_get_option('product_sharing_linkedin',true)): ?>
+	<li class="linkedin">
+		<a data-toggle="tooltip" data-placement="left" data-animation="true"  data-original-title="LinkedIn" href="<?php echo kipso_protocol_html() ?>://linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>&amp;title=<?php the_title(); ?>" target="_blank">
+			<i class="fa fa-linkedin"></i>
+		</a>
+	</li>
+	<?php endif; ?>
+
+	<?php if((bool)kipso_get_option('product_sharing_tumblr',true)): ?>
+	<li class="tumblr">
+		<a data-toggle="tooltip" data-placement="left" data-animation="true"  data-original-title="Tumblr" href="<?php echo kipso_protocol_html() ?>://www.tumblr.com/share/link?url=<?php echo urlencode(get_permalink()); ?>&amp;name=<?php echo urlencode($post->post_title); ?>&amp;description=<?php echo urlencode(get_the_excerpt()); ?>" target="_blank">
+			<i class="fa fa-tumblr"></i>
+		</a>
+	</li>
+	<?php endif; ?>
+
+	<?php if((bool)kipso_get_option('product_sharing_google',true)): ?>
+	<li class="google">
+		<a data-toggle="tooltip" data-placement="left" data-animation="true"  data-original-title="Google +1" href="<?php echo kipso_protocol_html() ?>://plus.google.com/share?url=<?php the_permalink(); ?>" onclick="javascript:window.open(this.href,
+'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank">
+			<i class="fa fa-google"></i>
+		</a>
+	</li>
+	<?php endif; ?>
+
+	<?php if((bool)kipso_get_option('product_sharing_pinterest',true)): ?>
+	<li class="pinterest">
+		<?php $full_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full'); ?>
+		<a data-toggle="tooltip" data-placement="left" data-animation="true"  data-original-title="Pinterest" href="<?php echo kipso_protocol_html() ?>://pinterest.com/pin/create/button/?url=<?php echo urlencode(get_permalink()); ?>&amp;description=<?php echo urlencode($post->post_title); ?>&amp;media=<?php echo urlencode($full_image[0]); ?>" target="_blank">
+			<i class="fa fa-pinterest"></i>
+		</a>
+	</li>
+	<?php endif; ?>
+	
+	<?php if((bool)kipso_get_option('product_sharing_email',true)): ?>
+	<li class="email">
+		<a data-toggle="tooltip" data-placement="left" data-animation="true"  data-original-title="Email" href="mailto:?subject=<?php the_title(); ?>&amp;body=<?php the_permalink(); ?>">
+			<i class="fa fa-envelope"></i>
+		</a>
+	</li>
+	<?php endif; ?>
+</ul>
